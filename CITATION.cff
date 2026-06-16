@@ -1,11 +1,39 @@
 cff-version: 1.2.0
-message: "If you use this benchmark, please cite it (update authors/venue before release)."
-title: "ContractBench: Evaluating Observation Contract Failures in LLM Agents"
+message: "If you use this benchmark, please cite the paper below."
+title: "ContractBench: Can LLM Agents Preserve Observation Contracts?"
 type: software
 license: MIT
-repository-code: "https://github.com/JeremyJC67/contractbench"
+repository-code: "https://github.com/SecurityLab-UCD/contractbench"
 authors:
   - family-names: "Wang"
     given-names: "Jicheng"
-version: 0.1.0
-date-released: "2026-02-09"
+  - family-names: "He"
+    given-names: "Yifeng"
+  - family-names: "Wang"
+    given-names: "Zili"
+  - family-names: "Xing"
+    given-names: "Hanwen"
+  - family-names: "De"
+    given-names: "Arkaprava"
+  - family-names: "Chen"
+    given-names: "Hao"
+preferred-citation:
+  type: article
+  title: "ContractBench: Can LLM Agents Preserve Observation Contracts?"
+  authors:
+    - family-names: "Wang"
+      given-names: "Jicheng"
+    - family-names: "He"
+      given-names: "Yifeng"
+    - family-names: "Wang"
+      given-names: "Zili"
+    - family-names: "Xing"
+      given-names: "Hanwen"
+    - family-names: "De"
+      given-names: "Arkaprava"
+    - family-names: "Chen"
+      given-names: "Hao"
+  journal: "arXiv preprint arXiv:2605.17281"
+  year: 2026
+  url: "https://arxiv.org/abs/2605.17281"
+date-released: "2026-05-17"
