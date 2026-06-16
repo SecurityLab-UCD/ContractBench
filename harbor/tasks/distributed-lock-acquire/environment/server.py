@@ -70,6 +70,7 @@ def _check_lock_stolen():
 
 def _validate_lock_token(request: Request) -> tuple[str | None, str]:
     """Validate the X-Lock-Token header. Returns (token, error_reason)."""
+    global _lock_stolen
     _check_lock_stolen()
 
     token = request.headers.get("x-lock-token", "")

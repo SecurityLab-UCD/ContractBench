@@ -424,7 +424,7 @@ async def get_events(request: Request):
 
 @app.post("/aggregate")
 async def post_aggregate(request: Request):
-    global _conflict_count, _accepted
+    global _conflict_count, _accepted, _current_reconciliation_challenge
 
     raw_path = request.scope.get("raw_path", b"")
     raw_qs = request.scope.get("query_string", b"")

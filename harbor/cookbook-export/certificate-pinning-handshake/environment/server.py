@@ -167,7 +167,7 @@ async def handshake_challenge(request: Request):
 
 @app.post("/handshake/sign")
 async def handshake_sign(request: Request):
-    global _session_active
+    global _session_active, _current_nonce
 
     # Check X-Seed-Anchor header
     seed_anchor = request.headers.get("x-seed-anchor", "")
