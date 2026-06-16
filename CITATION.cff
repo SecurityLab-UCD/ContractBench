@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it (update authors/venue before release)."
+title: "ContractBench: Evaluating Observation Contract Failures in LLM Agents"
+type: software
+license: MIT
+repository-code: "https://github.com/JeremyJC67/contractbench"
+authors:
+  - family-names: "Wang"
+    given-names: "Jicheng"
+version: 0.1.0
+date-released: "2026-02-09"

@@ -1,0 +1,8 @@
+{
+  "reward": 1.0,
+  "task_id": "multi-resource-priority",
+  "suite": "validity",
+  "success": true,
+  "failure_labels": [],
+  "server_log_summary": {"SUCCESS": 3}
+}

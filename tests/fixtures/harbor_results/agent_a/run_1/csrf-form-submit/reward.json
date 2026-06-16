@@ -1,0 +1,8 @@
+{
+  "reward": 1.0,
+  "task_id": "csrf-form-submit",
+  "suite": "integrity",
+  "success": true,
+  "failure_labels": [],
+  "server_log_summary": {"SUCCESS": 2}
+}

@@ -1,0 +1,22 @@
+# Worktrees
+.worktrees/
+
+# Virtual environment
+.venv/
+__pycache__/
+.DS_Store
+.env
+
+# Experiment results (tracked on 'experiments' branch, not master)
+results/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.pdf
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
