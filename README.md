@@ -76,7 +76,7 @@ See [harbor/TASK_CATALOG.md](harbor/TASK_CATALOG.md) for detailed task descripti
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/SecurityLab-UCD/contractbench.git
+git clone https://github.com/SecurityLab-UCD/ContractBench.git
 cd contractbench
 uv sync --extra all
 

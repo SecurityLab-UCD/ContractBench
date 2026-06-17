@@ -3,7 +3,7 @@ message: "If you use this benchmark, please cite the paper below."
 title: "ContractBench: Can LLM Agents Preserve Observation Contracts?"
 type: software
 license: MIT
-repository-code: "https://github.com/SecurityLab-UCD/contractbench"
+repository-code: "https://github.com/SecurityLab-UCD/ContractBench"
 authors:
   - family-names: "Wang"
     given-names: "Jicheng"
