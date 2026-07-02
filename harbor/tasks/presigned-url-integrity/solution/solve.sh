@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-sleep 2
+# Wait until the server is accepting connections (replaces a fixed sleep).
+for _ in $(seq 1 120); do curl -s -o /dev/null http://localhost:8080/ && break; sleep 0.5; done
 
 TASK_HTML=$(curl -s http://localhost:8080/task)
 URL=$(echo "$TASK_HTML" | python3 -c "

@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-sleep 2
+# Wait until the server is accepting connections (replaces a fixed sleep).
+for _ in $(seq 1 120); do curl -s -o /dev/null http://localhost:8080/ && break; sleep 0.5; done
 
 SEED_ANCHOR="1829304a5b6c7d8e9f0a1b2c"
 BASE_URL="http://localhost:8080"
