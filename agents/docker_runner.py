@@ -218,7 +218,7 @@ def _exec_in_container(container_id: str, command: str, timeout: int = 60) -> st
     try:
         result = subprocess.run(
             ["docker", "exec", container_id, "bash", "-c", command],
-            capture_output=True, text=True, timeout=timeout,
+            capture_output=True, text=True, errors="replace", timeout=timeout,
         )
         output = ""
         if result.stdout:
