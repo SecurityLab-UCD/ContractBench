@@ -18,10 +18,10 @@ Describe the change and link the task proposal or bug report when applicable.
 
 ## Reproduction
 
-List the repository commit, task or pack version, agent or oracle, command, and relevant redacted result. For documentation-only changes, state that no runtime behavior changed.
+List the repository commit, proposed task name or existing task version, agent or oracle, command, and relevant redacted result. For documentation-only changes, state that no runtime behavior changed.
 
 ## Checklist
 
-- [ ] I checked that the change matches the linked proposal or issue.
+- [ ] I checked that the change matches the linked proposal or issue, if applicable.
 - [ ] I removed credentials and private data from examples and logs.
 - [ ] I updated relevant documentation and identified any scoring-version impact.

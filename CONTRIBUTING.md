@@ -1,15 +1,19 @@
 # Contributing to ContractBench
 
 Thanks for your interest in improving ContractBench. The current paper suite
-contains 33 API-centered observation-contract tasks. Community extensions are
-proposals until they have been reviewed, implemented, and released separately;
-see [Community Task Packs](docs/community-task-packs.md).
+contains 33 API-centered observation-contract tasks. A single new task is a
+meaningful contribution; contributors do not need to assemble a pack. Community
+extensions are proposals until they have been reviewed, implemented, and
+released separately; see [Community Tasks and Packs](docs/community-task-packs.md).
 
 ## Ways to contribute
 
-- **Propose a task:** [Open a task proposal](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml)
-  before building a new scenario. A useful proposal can be reviewed without a
-  model API key or a completed implementation.
+- **Propose one task:** [Open a task proposal](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml)
+  with the observed artifact, later action, and rule to preserve. A useful
+  proposal needs neither a model API key nor a completed implementation.
+- **Implement one task:** Open a pull request, including a draft pull request,
+  if you have started building a scenario. Prior proposal approval is welcome
+  but not required.
 - **Improve an adapter or reproducibility:** Open a pull request with the
   affected task, adapter version, run command, and expected behavior.
 - **Report a bug or result discrepancy:** Use the
@@ -63,26 +67,26 @@ Omit `--tasks` to run all tasks for a model. See
 uv run python experiments/scripts/run_task_docker.py --agent <alias> --k 3 --timeout 600
 ```
 
-## Propose a task before implementation
+## Propose one task
 
-Use the [task proposal form](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml) to give
-reviewers a concrete contract to assess. Include:
+Use the [task proposal form](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml) to start a discussion. An initial proposal needs only:
 
-1. A primary specification or documented failure case, plus any licensing or
-   data-use constraints.
-2. The observable artifact or state, its producer, and the later action that
-   consumes it.
-3. The precise validity and integrity invariants. Specify what the agent can
-   observe, how time advances, and which bytes must be preserved.
-4. A compliant trace, a violating trace, and the expected deterministic verdict.
-5. A proposed verifier and passing oracle, and the difference from existing
-   tasks in the [task catalog](harbor/TASK_CATALOG.md).
+1. A primary specification, documented failure, or reproducible workflow that
+   motivates the case. Include a source link if one is available.
+2. The observable artifact or state and the later action that depends on it.
+3. The rule the agent should preserve across those steps.
+
+If available, add example traces, a verifier idea, the closest existing task,
+and any licensing or data-use constraints. Maintainers can help refine the
+contract and implementation. A precise contract, deterministic verifier, and
+passing reference solution are required before a task can be merged, not before
+an idea can be proposed.
 
 Proposals involving new scoring dimensions belong in a separate experimental
-track until their definitions and metrics are validated. An accepted proposal
-does not automatically become part of the frozen 33-task paper suite.
+track until their definitions and metrics are validated. A new task does not
+automatically become part of the frozen 33-task paper suite.
 
-## Implement an approved task
+## Implement a task
 
 See the onboarding material under `docs/` (`docs/onboarding.md`) for a deep
 dive. Task definitions live under `harbor/tasks/<name>/` and consist of:
@@ -101,12 +105,14 @@ new failure labels and preserve enough artifacts to reproduce the verdict.
 
 ## Pull request checklist
 
-- Link the proposal or bug report and identify the task and adapter versions.
+- Link a proposal or bug report if one exists, and identify the proposed task
+  name and any relevant adapter version.
 - Explain the observable contract and how the verifier checks it.
 - Include a passing oracle run and at least one intentional failure for a new
   task. Include the command and relevant redacted output in the pull request.
 - Document changes to task definitions or scoring that could affect published
-  results. Keep community-pack scores separate from paper-suite scores.
+  results. Maintainers assign community pack and version information; keep
+  community scores separate from paper-suite scores.
 - Confirm that submitted files contain no live credentials or private traces.
 
 ## Pre-commit validation

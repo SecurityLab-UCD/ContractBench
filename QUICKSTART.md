@@ -57,5 +57,5 @@ Record the repository commit, model identifier, adapter, run count, and configur
 ## Contribute
 
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup and pull request expectations.
-- [Propose a new task](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml) before implementing it.
-- Read [Community Task Packs](docs/community-task-packs.md) for the proposed expansion path and its scope limits.
+- [Propose one new task](https://github.com/SecurityLab-UCD/ContractBench/issues/new?template=task-proposal.yml), with no code required to start.
+- Read [Community Tasks and Packs](docs/community-task-packs.md) for the proposed expansion path and its scope limits.
