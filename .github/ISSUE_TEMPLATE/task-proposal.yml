@@ -1,0 +1,51 @@
+name: Task proposal
+description: Propose a machine-verifiable observation-contract task or community extension.
+title: "[Task proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A proposal is welcome before any code is written. The reported 33-task suite is the paper baseline; a new task will be reviewed for a separately versioned community pack or experimental track.
+  - type: input
+    id: source
+    attributes:
+      label: Specification or documented failure
+      description: Link a primary specification, incident, or reproducible real-world pattern.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation and follow-up action
+      description: What artifact or state is observed, who produces it, and which later action depends on it?
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Exact contract
+      description: State the validity and integrity conditions, including time and byte representation where relevant. Identify a proposed new scoring dimension if these do not apply.
+    validations:
+      required: true
+  - type: textarea
+    id: traces
+    attributes:
+      label: Compliant and violating traces
+      description: Give one short trajectory for each and the expected verdicts.
+    validations:
+      required: true
+  - type: textarea
+    id: verifier
+    attributes:
+      label: Deterministic verifier and reference solution
+      description: How could a local environment verify the result, and what would a passing oracle do? A design sketch is enough for a proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: novelty
+    attributes:
+      label: Relation to existing tasks and data-use constraints
+      description: Identify the closest task in the catalog, the difference, and any license or permission requirements.
+    validations:
+      required: true
