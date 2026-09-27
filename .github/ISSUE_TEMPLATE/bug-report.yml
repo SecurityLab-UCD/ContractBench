@@ -1,0 +1,42 @@
+name: Reproducibility or task bug
+description: Report a task, adapter, documentation, or scoring problem.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please redact API keys, private traces, and personal data before attaching logs.
+  - type: input
+    id: task
+    attributes:
+      label: Task or affected component
+      placeholder: scheduled-maintenance / Inspect adapter / documentation
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Repository commit or release
+      description: Include the adapter version too if an adapter is involved.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include the command, agent or oracle, configuration, and environment details needed to reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted evidence
+      description: Include relevant reward, failure label, verifier output, or trace excerpts.
+    validations:
+      required: true
