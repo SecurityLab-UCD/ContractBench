@@ -218,7 +218,7 @@ def _exec_in_container(container_id: str, command: str, timeout: int = 60) -> st
     try:
         result = subprocess.run(
             ["docker", "exec", container_id, "bash", "-c", command],
-            capture_output=True, text=True, timeout=timeout,
+            capture_output=True, text=True, errors="replace", timeout=timeout,
         )
         output = ""
         if result.stdout:
@@ -236,11 +236,27 @@ def _exec_in_container(container_id: str, command: str, timeout: int = 60) -> st
 
 
 def _stop_container(container_id: str) -> None:
-    """Stop and remove the container."""
-    subprocess.run(
-        ["docker", "stop", container_id],
-        capture_output=True, text=True, timeout=30,
-    )
+    """Stop and remove the container.
+
+    Teardown must never abort the experiment: on a loaded host `docker stop`
+    can exceed its timeout, and an uncaught TimeoutExpired here kills the
+    whole run. Fall back to `docker rm -f` and give up quietly.
+    """
+    try:
+        subprocess.run(
+            ["docker", "stop", container_id],
+            capture_output=True, text=True, errors="replace", timeout=60,
+        )
+        return
+    except subprocess.TimeoutExpired:
+        pass
+    try:
+        subprocess.run(
+            ["docker", "rm", "-f", container_id],
+            capture_output=True, text=True, errors="replace", timeout=60,
+        )
+    except subprocess.TimeoutExpired:
+        pass
 
 
 def _copy_from_container(container_id: str, src: str, dst: Path) -> bool:
